@@ -12,62 +12,42 @@
 }
 
 body { font-family: var(--font-primary); background-color: var(--bg-color); color: var(--text-color); }
-.navbar { background-color: rgba(33, 37, 41, 0.95); backdrop-filter: blur(10px); }
-.navbar-brand { font-family: var(--font-secondary); font-weight: 700; }
 
-
-.hero-section { padding: 100px 0 80px; background: var(--gradient); color: white; }
-/* --- Hero Section con Imagen y Fondo Animado --- */
+h1, h2, h3 { font-family: var(--font-secondary); font-weight: 700; }
+.btn-primary { background: var(--gradient); border: none; }
+.footer { background-color: #212529; color: white; padding: 30px 0; margin-top: 2rem; }
 
 .hero-section {
-    padding: 100px 0 80px; /* Ajuste de padding para la imagen */
+    padding: 100px 0 80px;
     color: white;
-    /* Fondo gradiente más grande para la animación */
     background: linear-gradient(135deg, #0d6efd, #5fce5f, #0558ca, #86e90d);
     background-size: 400% 400%;
-    /* Aplicar la animación del gradiente */
     animation: gradient-animation 18s ease infinite;
 }
 
-/* Keyframes para animar el fondo del Hero */
 @keyframes gradient-animation {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
 }
 
-/* Estilos de la imagen del Hero */
 .hero-image {
     width: 100px;
     height: 100px;
-    border-radius: 50%; /* Forma circular */
-    border: 6px solid rgba(255, 255, 255, 0.8); /* Borde blanco semi-transparente */
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.6); /* Sombra/resplandor inicial */
-    object-fit: cover; /* Asegura que la imagen llene el círculo sin deformarse */
-    margin-bottom: 2rem; /* Espacio debajo de la imagen */
-    /* Aplicar la animación de latido y resplandor */
+    border-radius: 50%;
+    border: 6px solid rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+    object-fit: cover;
+    margin-bottom: 2rem;
     animation: heartbeat 2s ease-in-out infinite;
 }
 
-/* Keyframes para la animación de latido (escala) y resplandor (sombra) */
 @keyframes heartbeat {
-    0% {
-        transform: scale(1);
-        box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
-    }
-    50% {
-        transform: scale(1.05); /* Ligeramente más grande */
-        box-shadow: 0 0 40px rgba(255, 255, 255, 0.9); /* Resplandor más intenso */
-    }
-    100% {
-        transform: scale(1);
-        box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
-    }
+    0% { transform: scale(1); box-shadow: 0 0 20px rgba(255, 255, 255, 0.6); }
+    50% { transform: scale(1.05); box-shadow: 0 0 40px rgba(255, 255, 255, 0.9); }
+    100% { transform: scale(1); box-shadow: 0 0 20px rgba(255, 255, 255, 0.6); }
 }
 
-h1, h2, h3 { font-family: var(--font-secondary); font-weight: 700; }
-.btn-primary { background: var(--gradient); border: none; }
-.footer { background-color: #212529; color: white; padding: 30px 0; margin-top: 2rem; }
 .control-panel { background-color: var(--surface-color); padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); }
 .accordion-button:not(.collapsed) { background-color: var(--primary-color); color: white; }
 .accordion-button:focus { box-shadow: none; }
@@ -114,63 +94,27 @@ h1, h2, h3 { font-family: var(--font-secondary); font-weight: 700; }
 .history-card:hover { box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
 .history-card h5 { color: var(--primary-color); font-weight: 700; }
 
+.modal { display: none; position: fixed; z-index: 999; inset: 0; background: rgba(0,0,0,0.7); }
+.modal-content { position: relative; background: white; color: #333; margin: 8% auto; padding: 20px; border-radius: 12px; width: 90%; max-width: 400px; text-align: center; animation: zoomIn 0.4s ease; }
+@keyframes zoomIn { from {opacity: 0; transform: scale(0.8);} to {opacity: 1; transform: scale(1);} }
+.modal-img { display: block; margin: 0 auto 15px auto; width: 120px; height: 120px; border-radius: 50%; border: 4px solid #0d6efd; }
+.close { position: absolute; top: 10px; right: 15px; font-size: 28px; cursor: pointer; color: #333; }
+.social-icons a { font-size: 24px; margin: 10px; color: #555; transition: color 0.3s ease; }
+.social-icons a:hover { color: #0d6efd; }
 
+#toast-container { position: fixed; bottom: 20px; right: 20px; z-index: 1056; display: flex; flex-direction: column; align-items: flex-end; gap: 10px; }
+.toast-notification { background-color: #333; color: white; padding: 12px 20px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); opacity: 0; transform: translateX(100%); transition: all 0.4s ease-in-out; font-size: 1rem; display: flex; align-items: center; gap: 10px; }
+.toast-notification.show { opacity: 1; transform: translateX(0); }
+.toast-notification.success { background-color: #28a745; }
+.toast-notification.error { background-color: #dc3545; }
 
-/* Modal */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 999;
-    inset: 0;
-    background: rgba(0,0,0,0.7);
-}
+#loading-overlay { position: fixed; inset: 0; background-color: rgba(0, 0, 0, 0.7); z-index: 9999; display: none; justify-content: center; align-items: center; flex-direction: column; color: white; font-family: var(--font-secondary); }
+#loading-overlay.active { display: flex; }
+.spinner { width: 60px; height: 60px; border: 5px solid rgba(255, 255, 255, 0.3); border-top-color: #fff; border-radius: 50%; animation: spin 1s linear infinite; margin-bottom: 20px; }
+@keyframes spin { to { transform: rotate(360deg); } }
 
-/* Contenido del modal */
-.modal-content {
-    position: relative;
-    background: white;
-    color: #333;
-    margin: 8% auto;
-    padding: 20px;
-    border-radius: 12px;
-    width: 90%;
-    max-width: 400px;
-    text-align: center;
-    animation: zoomIn 0.4s ease;
-}
-
-/* Animación */
-@keyframes zoomIn {
-    from {opacity: 0; transform: scale(0.8);}
-    to {opacity: 1; transform: scale(1);}
-}
-
-/* Imagen del modal centrada */
-.modal-img {
-    display: block;
-    margin: 0 auto 15px auto;
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    border: 4px solid #0d6efd;
-}
-
-/* Botón cerrar */
-.close {
-    position: absolute;
-    top: 10px; right: 15px;
-    font-size: 28px;
-    cursor: pointer;
-    color: #333;
-}
-
-/* Iconos de redes */
-.social-icons a {
-    font-size: 24px;
-    margin: 10px;
-    color: #555;
-    transition: color 0.3s ease;
-}
-.social-icons a:hover {
-    color: #0d6efd;
-}
+body.exporting-pdf { overflow: hidden; }
+body.exporting-pdf .control-panel, body.exporting-pdf .hero-section, body.exporting-pdf #cv-history, body.exporting-pdf .footer, body.exporting-pdf .navbar, body.exporting-pdf .text-center.mt-4 { display: none !important; }
+body.exporting-pdf .viewer-container { position: absolute !important; top: 0 !important; left: 0 !important; width: 100% !important; height: auto !important; margin: 0 !important; padding: 0 !important; }
+body.exporting-pdf .cv-paper-container { box-shadow: none !important; padding: 0 !important; border-radius: 0 !important; }
+body.exporting-pdf #cv-preview { width: 210mm !important; height: auto !important; min-height: unset !important; box-shadow: none !important; margin: 0 !important; }
