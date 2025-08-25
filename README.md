@@ -1,4 +1,4 @@
-# CV Genius 📄✨
+# CV Pro 📄✨
 
 ¡Bienvenido a **CV Pro**! Una herramienta de código abierto diseñada para empoderar a profesionales, estudiantes y cualquier persona en búsqueda de oportunidades, permitiéndoles crear currículums de alto impacto de forma rápida, visual y completamente gratuita.
 
@@ -6,14 +6,14 @@
 
 ---
 
-![Captura de Pantalla de CV Genius](Screenshot_600.png) 
+![Captura de Pantalla de CV Pro](Screenshot_600.png) 
 
 
 ---
 
-## ¿Por qué usar CV Genius? 🤔
+## ¿Por qué usar CV Pro? 🤔
 
-En un mercado laboral competitivo, un buen CV es tu mejor carta de presentación. CV Genius elimina las barreras técnicas y económicas, ofreciendo una solución intuitiva con características de nivel profesional:
+En un mercado laboral competitivo, un buen CV es tu mejor carta de presentación. CV Pro elimina las barreras técnicas y económicas, ofreciendo una solución intuitiva con características de nivel profesional:
 
 *   ✍️ **Editor en Tiempo Real:** Mira cómo tu CV cobra vida mientras escribes. Sin sorpresas, lo que ves es lo que obtienes.
 *   📄 **Exportación a PDF Inteligente:** Genera un PDF de alta calidad con un solo clic. El sistema ajusta automáticamente el formato del papel (Carta a Oficio/Legal) para que tu contenido siempre quepa perfectamente en una sola página.
@@ -26,7 +26,7 @@ En un mercado laboral competitivo, un buen CV es tu mejor carta de presentación
 
 ## Nuestro Aporte a la Comunidad 💖
 
-La misión de CV Genius va más allá de ser solo una herramienta; es un proyecto con un fuerte propósito educativo y social.
+La misión de CV Pro va más allá de ser solo una herramienta; es un proyecto con un fuerte propósito educativo y social.
 
 ### 🎓 Para Estudiantes y Buscadores de Empleo
 Ofrecemos una herramienta gratuita y accesible que ayuda a derribar una de las primeras barreras para entrar al mercado laboral: la creación de un CV profesional. Empoderamos a los usuarios para que presenten sus habilidades y experiencias de la mejor manera posible, sin necesidad de conocimientos de diseño o de pagar por software costoso.
@@ -44,7 +44,7 @@ Este proyecto sirve como un caso de estudio práctico y de código abierto sobre
 
 ## Tecnologías Utilizadas 🛠️
 
-CV Genius está construido con un stack de tecnologías front-end modernas, robustas y ampliamente utilizadas en la industria.
+CV Pro está construido con un stack de tecnologías front-end modernas, robustas y ampliamente utilizadas en la industria.
 
 *   **Lenguajes Base:**
     *   ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
@@ -64,7 +64,7 @@ CV Genius está construido con un stack de tecnologías front-end modernas, robu
 
 ## ¡Únete al Proyecto! 🤝
 
-¡Tu colaboración es bienvenida! Si tienes ideas para mejorar CV Genius, has encontrado un error o quieres añadir una nueva funcionalidad, no dudes en participar.
+¡Tu colaboración es bienvenida! Si tienes ideas para mejorar CV Pro, has encontrado un error o quieres añadir una nueva funcionalidad, no dudes en participar.
 
 ### ¿Cómo Colaborar?
 1.  **Haz un Fork** del repositorio.
