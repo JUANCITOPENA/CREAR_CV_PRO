@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/256/8347/8347432.png" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Pro - Creador de Currículums de Alto Impacto</title>
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts (Lato & Raleway) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Raleway:wght@400;700;900&display=swap" rel="stylesheet">
+    <!-- FontAwesome & Devicon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!--     Navbar
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#"><i class="fas fa-file-invoice"></i> CV Pro</a>
+        </div>
+    </nav> -->
+<!-- Hero Section -->
+<header id="hero" class="hero-section">
+    <div class="container text-center">
+        <!-- Imagen animada con evento de clic -->
+        <img src="https://avatars.githubusercontent.com/u/38921558?v=4" 
+             alt="Imagen de perfil" 
+             class="hero-image" 
+             id="profileImage"
+             style="cursor:pointer;">
+        
+        <h1>Crea un Currículum que Destaque</h1>
+        <p class="lead">Completa tus datos y mira cómo tu CV profesional cobra vida en tiempo real.</p>
+    </div>
+</header>
+
+<!-- Modal -->
+<div id="bioModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <img src="https://avatars.githubusercontent.com/u/38921558?v=4" 
+             alt="Juancito Peña" 
+             class="modal-img">
+        <h2>Juancito Peña</h2>
+        <p>Ingeniero en Sistemas, especialista en desarrollo de software, automatización, análisis de datos y docencia tecnológica. Líder en soluciones institucionales con alto impacto visual y funcional.</p>
+        <div class="social-icons">
+            <a href="https://github.com/juancito" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/juancito" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://twitter.com/juancito" target="_blank"><i class="fab fa-twitter"></i></a>
+        </div>
+    </div>
+</div>
+    <!-- Generador Principal -->
+    <main id="generator" class="container my-5">
+        <div class="row g-lg-5">
+            <!-- Panel de Control (Formulario) -->
+            <aside class="col-lg-5">
+                <div class="control-panel">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <h3 class="m-0">Completa tus Datos 📝</h3>
+                        <button class="btn btn-sm btn-outline-danger" id="new-cv-btn"><i class="fas fa-file"></i> Nuevo CV</button>
+                    </div>
+                    <form id="cv-form">
+                        <input type="hidden" id="cv-id">
+                        <div class="accordion" id="cv-accordion">
+                            <!-- Acordeones del formulario -->
+                            <div class="accordion-item"><h2 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"><i class="fas fa-user me-2"></i> Datos Personales</button></h2><div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#cv-accordion"><div class="accordion-body"><input type="text" id="cv-name" class="form-control mb-2" placeholder="Nombre Completo" required><input type="text" id="cv-title" class="form-control mb-2" placeholder="Tu Título (Ej: Ingeniero de Software)" required><input type="email" id="cv-email" class="form-control mb-2" placeholder="Email" required><input type="tel" id="cv-phone" class="form-control mb-2" placeholder="Teléfono"><input type="text" id="cv-linkedin" class="form-control mb-2" placeholder="URL de tu LinkedIn"><input type="text" id="cv-github" class="form-control mb-2" placeholder="URL de tu GitHub (Opcional)"><input type="text" id="cv-location" class="form-control" placeholder="Ciudad, País"></div></div></div>
+                            <div class="accordion-item"><h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo"><i class="fas fa-bullseye me-2"></i> Resumen Profesional</button></h2><div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#cv-accordion"><div class="accordion-body"><textarea id="cv-summary" class="form-control" rows="5" placeholder="Un resumen impactante de tu perfil..."></textarea></div></div></div>
+                            <div class="accordion-item"><h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree"><i class="fas fa-briefcase me-2"></i> Experiencia Laboral</button></h2><div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#cv-accordion"><div class="accordion-body" id="experience-entries"></div><div class="p-3 border-top"><button type="button" class="btn btn-outline-primary btn-sm w-100" id="add-experience-btn"><i class="fas fa-plus"></i> Añadir Experiencia</button></div></div></div>
+                            <div class="accordion-item"><h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour"><i class="fas fa-graduation-cap me-2"></i> Educación</button></h2><div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#cv-accordion"><div class="accordion-body" id="education-entries"></div><div class="p-3 border-top"><button type="button" class="btn btn-outline-primary btn-sm w-100" id="add-education-btn"><i class="fas fa-plus"></i> Añadir Formación</button></div></div></div>
+                            <div class="accordion-item"><h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive"><i class="fas fa-star me-2"></i> Cursos y Certificaciones</button></h2><div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#cv-accordion"><div class="accordion-body" id="extra-entries"></div><div class="p-3 border-top"><button type="button" class="btn btn-outline-primary btn-sm w-100" id="add-extra-btn"><i class="fas fa-plus"></i> Añadir Curso</button></div></div></div>
+                            <div class="accordion-item"><h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix"><i class="fas fa-cogs me-2"></i> Habilidades</button></h2><div id="collapseSix" class="accordion-collapse collapse" data-bs-parent="#cv-accordion"><div class="accordion-body"><label class="form-label">Técnicas y Blandas (separadas por comas)</label><textarea id="cv-skills" class="form-control" placeholder="JavaScript, React, Node.js, Liderazgo..."></textarea></div></div></div>
+                            <div class="accordion-item"><h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven"><i class="fas fa-address-book me-2"></i> Referencias</button></h2><div id="collapseSeven" class="accordion-collapse collapse" data-bs-parent="#cv-accordion"><div class="accordion-body" id="reference-entries"></div><div class="p-3 border-top"><button type="button" class="btn btn-outline-primary btn-sm w-100" id="add-reference-btn"><i class="fas fa-plus"></i> Añadir Referencia</button></div></div></div>
+                        </div>
+                    </form>
+                </div>
+            </aside>
+            <!-- Visor del CV -->
+            <section class="col-lg-7">
+                <div class="viewer-container">
+                    <div class="cv-paper-container">
+                        <div id="cv-preview" class="cv-paper">
+                            <div class="placeholder-cv">
+                                <i class="fas fa-file-alt fa-4x mb-3"></i>
+                                <h4>Tu CV aparecerá aquí</h4>
+                                <p>Comienza a llenar tus datos para verlo.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center mt-4 d-flex gap-3 justify-content-center">
+                        <button id="save-cv-btn" class="btn btn-success btn-lg"><i class="fas fa-save me-2"></i> Guardar CV</button>
+                        <button id="export-pdf-btn" class="btn btn-primary btn-lg"><i class="fas fa-download me-2"></i> Descargar PDF</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <!-- Historial de CVs -->
+    <section id="cv-history" class="container my-5">
+        <h2 class="text-center mb-4">Historial de CVs Guardados 📂</h2>
+        <div id="history-list" class="row g-3"></div>
+    </section>
+    <!-- Footer de la página -->
+    <footer class="footer">
+        <div class="container text-center"><p>&copy; 2023 CV Genius. Creado para ayudarte a triunfar.</p></div>
+    </footer>
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="script.js"></script>
+
+<script>
+// Abrir modal
+document.getElementById("profileImage").onclick = () => {
+    document.getElementById("bioModal").style.display = "block";
+};
+
+// Cerrar modal con X
+document.querySelector(".close").onclick = () => {
+    document.getElementById("bioModal").style.display = "none";
+};
+
+// Cerrar haciendo clic fuera del modal
+window.onclick = e => {
+    if (e.target == document.getElementById("bioModal")) {
+        document.getElementById("bioModal").style.display = "none";
+    }
+};
+
+</script>
+
+</body>
+</html>
