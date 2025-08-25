@@ -6,7 +6,7 @@
 
 ---
 
-![Captura de Pantalla de CV Genius](https://i.ibb.co/L51Jqg6/cv-genius-screenshot.png) 
+![Captura de Pantalla de CV Genius](****) 
 *(Reemplaza la URL de arriba con una captura de pantalla de tu proyecto)*
 
 ---
