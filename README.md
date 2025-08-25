@@ -1,6 +1,6 @@
 # CV Genius 📄✨
 
-¡Bienvenido a **CV Genius**! Una herramienta de código abierto diseñada para empoderar a profesionales, estudiantes y cualquier persona en búsqueda de oportunidades, permitiéndoles crear currículums de alto impacto de forma rápida, visual y completamente gratuita.
+¡Bienvenido a **CV Pro**! Una herramienta de código abierto diseñada para empoderar a profesionales, estudiantes y cualquier persona en búsqueda de oportunidades, permitiéndoles crear currículums de alto impacto de forma rápida, visual y completamente gratuita.
 
 **[➡️ Ver Demo en Vivo (Enlace a tu sitio web aquí)](#)**
 
