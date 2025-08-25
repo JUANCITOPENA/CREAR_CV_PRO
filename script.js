@@ -162,7 +162,14 @@ document.addEventListener('DOMContentLoaded', () => {
         try {
             const cvData = getFormDataAsObject();
             if (!cvData.name.trim()) { alert('Por favor, ingresa al menos un nombre para guardar el CV.'); return; }
-            let history = JSON.parse(localStorage.getItem('cvHistory')) || [];
+            let history = [];
+            const historyString = localStorage.getItem('cvHistory');
+            if (historyString) {
+                try {
+                    const parsed = JSON.parse(historyString);
+                    if (Array.isArray(parsed)) history = parsed;
+                } catch (e) { console.error("Historial corrupto, se sobreescribirá."); }
+            }
             const existingIndex = history.findIndex(cv => cv.id == cvData.id);
             if (existingIndex > -1) { history[existingIndex] = cvData; } else { history.push(cvData); }
             localStorage.setItem('cvHistory', JSON.stringify(history));
@@ -171,7 +178,7 @@ document.addEventListener('DOMContentLoaded', () => {
         } catch (error) {
             console.error("Error al guardar CV en el historial:", error);
             showToast('Error al guardar el CV.', 'error');
-            if (error.name === 'QuotaExceededError') { showToast('¡Almacenamiento local lleno! No se pudo guardar.', 'error'); alert('Tu navegador no tiene más espacio para guardar CVs.'); }
+            if (error.name === 'QuotaExceededError') { showToast('¡Almacenamiento local lleno!', 'error'); alert('Tu navegador no tiene más espacio para guardar CVs.'); }
         }
     }
 
@@ -252,4 +259,4 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- INICIALIZACIÓN ---
     loadCurrentDraft();
     renderHistory();
-});```
+});
