@@ -6,7 +6,7 @@
 
 ---
 
-![Captura de Pantalla de CV Genius](Screenshot_599.png) 
+![Captura de Pantalla de CV Genius](Screenshot_600.png) 
 
 
 ---
