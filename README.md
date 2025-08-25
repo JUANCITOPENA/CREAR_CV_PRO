@@ -6,8 +6,8 @@
 
 ---
 
-![Captura de Pantalla de CV Genius](****) 
-*(Reemplaza la URL de arriba con una captura de pantalla de tu proyecto)*
+![Captura de Pantalla de CV Genius](Screenshot_599.png) 
+
 
 ---
 
